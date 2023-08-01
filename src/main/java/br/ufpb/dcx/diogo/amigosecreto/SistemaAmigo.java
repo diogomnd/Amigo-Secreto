@@ -8,11 +8,20 @@ public class SistemaAmigo {
     private List<Amigo> amigos;
 
     public void cadastraAmigo(String nomeAmigo, String emailAmigo) {
-
+        Amigo amigo = new Amigo(nomeAmigo, emailAmigo);
+        if (!this.amigos.contains(amigo)) {
+            this.amigos.add(amigo);
+        }
     }
 
     public Amigo pesquisaAmigo(String emailAmigo) {
-        return new Amigo();
+        Amigo amigo = null;
+        for (Amigo a : this.amigos) {
+            if (a.getEmail().equals(emailAmigo)) {
+                amigo = a;
+            }
+        }
+        return amigo;
     }
 
     public void enviarMensagensParaTodos(String texto, String emailRemetente, boolean ehAnonima) {
