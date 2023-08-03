@@ -7,7 +7,9 @@ public abstract class Mensagem {
     private boolean anonima;
 
     public Mensagem(String texto, String emailRemetente, boolean anonima) {
-
+        this.texto = texto;
+        this.emailRemetente = emailRemetente;
+        this.anonima = anonima;
     }
 
     public String getTexto() {
@@ -18,9 +20,7 @@ public abstract class Mensagem {
         this.texto = texto;
     }
 
-    public String getTextoCompletoAExibir() {
-        return "";
-    }
+    public abstract String getTextoCompletoAExibir();
 
     public String getEmailRemetente() {
         return emailRemetente;

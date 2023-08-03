@@ -57,4 +57,11 @@ public class Amigo implements Comparable<Amigo> {
         return this.nome.compareTo(o.getNome());
     }
 
+    @Override
+    public String toString() {
+        return "Amigo de nome " + this.nome +
+                " com o email: " + this.email +
+                " que sorteou o amigo de email: " + emailAmigoSorteado;
+    }
+
 }
